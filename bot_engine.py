@@ -8,7 +8,7 @@ from schemas import SystemOutput
 
 load_dotenv()
 
-# 1. Secure API Key Resolution (Local .env vs Streamlit Cloud Secrets)
+# 1. Secure API Key Resolution
 groq_api_key = os.environ.get("GROQ_API_KEY")
 if not groq_api_key:
     try:
@@ -26,15 +26,15 @@ vectorstore = Chroma(
 )
 retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
 
-# 3. LLM Setup with Structured Pydantic Output
-# Using llama-3.1-8b-instant for fast, guaranteed availability on Groq free tier
+# 3. LLM Setup with JSON Mode
 llm = ChatGroq(
     model="llama-3.1-8b-instant",
     temperature=0.1,
     groq_api_key=groq_api_key
 )
 
-structured_llm = llm.with_structured_output(SystemOutput)
+# Crucial fix: explicitly use json_mode to avoid Groq 404 tool endpoint errors
+structured_llm = llm.with_structured_output(SystemOutput, method="json_mode")
 
 def process_query(user_query: str, chat_history: str = "") -> SystemOutput:
     # Retrieve evidence from ChromaDB
@@ -63,6 +63,8 @@ def process_query(user_query: str, chat_history: str = "") -> SystemOutput:
 
     Current User Query:
     {user_query}
+
+    Return your answer strictly according to the required JSON schema.
     """
 
     return structured_llm.invoke(prompt)
