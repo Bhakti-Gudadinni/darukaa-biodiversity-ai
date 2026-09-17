@@ -1,0 +1,6 @@
+Document: FAO & IPCC Agroecological Interventions
+Topic: Soil Organic Carbon (SOC), Agroforestry, and Intercropping
+- Introducing legume-based cover crops (e.g., cowpea, vetch, clover) into monoculture wheat or cereal systems in semi-arid zones increases soil organic carbon (SOC) by approximately 15% to 25% over a 2 to 3-year period (FAO Land & Water Division, 2020).
+- Deep-rooted legumes fix atmospheric nitrogen (30-60 kg N/ha/year), which stimulates subterranean mycorrhizal fungi and improves soil aggregate stability.
+- Swales along topographic contours in low-rainfall semi-arid environments capture up to 40% of seasonal surface runoff, reducing soil erosion and increasing soil moisture retention by 15-20% over 1-2 years.
+- Establishing multi-strata agroforestry shelterbelts with indigenous drought-tolerant trees reduces wind erosion, moderates ground surface temperature by 2-4°C, and elevates pollinator species richness by 30% within 3-5 years (IPCC WGII Report on Climate & Land, 2022).
