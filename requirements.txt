@@ -1,6 +1,6 @@
 streamlit
 langchain
-langchain-openai
+langchain-groq
 langchain-chroma
 langchain-community
 langchain-huggingface
